@@ -10,6 +10,7 @@
  */
 function countProperties(obj) {
   // TODO
+  return Object.keys(obj).length;
 }
 
 export { countProperties };
