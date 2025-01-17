@@ -12,6 +12,18 @@
  */
 function createCounter() {
   let count = 0;
+  let methodObj = {
+    increase: () => {
+      return ++count;
+    },
+    decrease: () => {
+      return --count;
+    },
+    currentValue: () => {
+      return count;
+    }
+  }
+  return methodObj;
 }
 
 // export를 수정하지 마세요.

@@ -10,7 +10,13 @@
  * @param {string} pw
  * @returns {Promise<string>} "ok" 또는 "fail"
  */
-function loginRequest(id, pw) {}
+function loginRequest(id, pw) {
+    if(id === 'admin' && pw === "1234"){
+        return new Promise((resolve) => resolve('ok'));
+    }else{
+        return new Promise((_, reject) => reject('fail'));
+    }
+}
 
 // export를 수정하지 마세요.
 export { loginRequest };
