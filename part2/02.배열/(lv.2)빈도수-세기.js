@@ -11,7 +11,32 @@
  */
 
 // TODO: 함수를 작성하세요.
-function getFrequency(arr) {}
+// function getFrequency(arr) {
+//     let newArr = {};
+//     arr.forEach((a) => {
+//         console.log(a ,typeof a)
+//         if(!newArr[a]){
+//             typeof a === 'string' ? newArr[String(a)] = 1 : newArr[a] = 1;
+//         }else{
+//             typeof a === 'string' ? newArr[String(a)]++ : newArr[a]++;
+//         }
+//     })
+//     console.log(newArr)
+//     return newArr;
+// }
+// 객체 키값을 무조건 string으로 받아와 Map을 사용해야 함
+function getFrequency(arr) {
+    let newArr = new Map();
+    arr.forEach((a) => {
+        if(!newArr.has(a)){
+            newArr.set(a, 1);
+        }else{
+            newArr.set(a, newArr.get(a) + 1);
+        }
+    })
+    return Object.fromEntries(newArr);
+}
+
 
 // export 를 수정하지 마세요.
 export { getFrequency };
